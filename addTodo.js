@@ -1,6 +1,4 @@
-    // get alltodos and initialise listeners
     addTodo();
-    // dragover on .todos container
     document.querySelector(".todos").addEventListener("dragover", function(e) {
         e.preventDefault();
         if (!e.target.classList.contains("dragging") &&
@@ -22,7 +20,6 @@
             localStorage.setItem("todos", JSON.stringify(todos));
         }
     });
-    // add new todos on user input
     const add = document.getElementById("add-btn");
     const txtInput = document.querySelector(".txt-input");
     add.addEventListener("click", function() {
@@ -42,7 +39,6 @@
         }
         txtInput.focus();
     });
-    // add todo also on enter key event
     txtInput.addEventListener("keydown", function(e) {
         if (e.keyCode === 13) {
             add.click();
